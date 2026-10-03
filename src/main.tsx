@@ -40,7 +40,7 @@ ReactDOM.createRoot(rootElement).render(
   // certain lifecycles so bugs like impure renders or stale effects show up
   // early. It has no effect on the production build.
   <React.StrictMode>
-    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <BrowserRouter basename={routerBasename} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <App />
     </BrowserRouter>
   </React.StrictMode>
