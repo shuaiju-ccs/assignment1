@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------------
 // Home.tsx — the landing page ("/").
-// Author: Bill Chen
+// Author: Shuai Ju
 //
 // Concepts introduced here:
 //   • useEffect — a hook that runs code AFTER render, useful for reacting to
@@ -13,9 +13,9 @@
 //     when the value is falsy, so this is a common shorthand for "show X only
 //     if Y is true."
 // -----------------------------------------------------------------------------
-import { useEffect, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import Logo from '../components/Logo';
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Logo from "../components/Logo";
 
 type ContactRedirectState = {
   justSubmitted?: boolean;
@@ -84,13 +84,13 @@ export default function Home() {
     // If the Contact page told us the form was submitted, show the banner.
     if (state?.justSubmitted) {
       setConfirmation({
-        firstName: state.firstName || '',
-        lastName: state.lastName || '',
+        firstName: state.firstName || "",
+        lastName: state.lastName || "",
       });
 
       // Clear the router state so the message does not keep showing again on
       // refresh or if the user navigates back to the home page.
-      navigate('/', { replace: true, state: null });
+      navigate("/", { replace: true, state: null });
     }
   }, [location.state, navigate]);
 
@@ -107,76 +107,81 @@ export default function Home() {
       ) : (
         <>
           {confirmation && (
-        // Confirmation banner — an accent-tinted panel with a dismiss button.
-        // `role="status" aria-live="polite"` announces the text to screen
-        // readers without stealing focus.
-        <div
-          role="status"
-          aria-live="polite"
-          className="flex items-center justify-between gap-4 px-4 py-3 mb-6 rounded-md bg-accent/15 border border-accent text-text"
-        >
-          <span>
-            {/* Ternary inside JSX: include ", firstName" only when we have one. */}
-            Thanks{confirmation.firstName ? `, ${confirmation.firstName}` : ''}{confirmation.lastName ? ` ${confirmation.lastName}` : ''} — your
-            message was received. I'll get back to you shortly.
-          </span>
-          <button
-            type="button"
-            aria-label="Dismiss confirmation"
-            onClick={() => setConfirmation(null)}
-            className="bg-transparent text-text border-0 text-2xl leading-none cursor-pointer px-1 hover:text-accent"
-          >
-            ×
-          </button>
-        </div>
-      )}
+            // Confirmation banner — an accent-tinted panel with a dismiss button.
+            // `role="status" aria-live="polite"` announces the text to screen
+            // readers without stealing focus.
+            <div
+              role="status"
+              aria-live="polite"
+              className="flex items-center justify-between gap-4 px-4 py-3 mb-6 rounded-md bg-accent/15 border border-accent text-text"
+            >
+              <span>
+                {/* Ternary inside JSX: include ", firstName" only when we have one. */}
+                Thanks
+                {confirmation.firstName ? `, ${confirmation.firstName}` : ""}
+                {confirmation.lastName ? ` ${confirmation.lastName}` : ""} —
+                your message was received. I'll get back to you shortly.
+              </span>
+              <button
+                type="button"
+                aria-label="Dismiss confirmation"
+                onClick={() => setConfirmation(null)}
+                className="bg-transparent text-text border-0 text-2xl leading-none cursor-pointer px-1 hover:text-accent"
+              >
+                ×
+              </button>
+            </div>
+          )}
 
-      {/* Hero grid. `md:grid-cols-[1.4fr_1fr]` uses an arbitrary value —
+          {/* Hero grid. `md:grid-cols-[1.4fr_1fr]` uses an arbitrary value —
           Tailwind lets you drop any CSS value into brackets when the
           built-in scale doesn't fit. */}
-      <div className="grid gap-8 mb-10 items-center grid-cols-1 md:grid-cols-[1.4fr_1fr]">
-        <div>
-          <p className="uppercase tracking-[0.14em] text-accent font-semibold text-sm mb-2">
-            Welcome
-          </p>
-          <h1>Hi, I'm Bill Chen. This is my portfolio. Demo for COMP229 class.</h1>
-          <p className="lead">
-            I design and build fast, accessible web experiences that turn ideas into
-            products people enjoy using. Take a look around — the tour starts on the
-            About page.
-          </p>
+          <div className="grid gap-8 mb-10 items-center grid-cols-1 md:grid-cols-[1.4fr_1fr]">
+            <div>
+              <p className="uppercase tracking-[0.14em] text-accent font-semibold text-sm mb-2">
+                Welcome
+              </p>
+              <h1>
+                Hi, I'm Shuai Ju. This is my portfolio. Assignment 1 for COMP229
+                class section 404.
+              </h1>
+              <p className="lead">
+                I'm a software engineering student at Centennial College, with a
+                focus on web development in this COMP229 course, section 404.
+              </p>
 
-          <div className="flex flex-wrap gap-3 mt-5">
-            <Link className="btn" to="/about">
-              About Me
-            </Link>
-            <Link className="btn btn-secondary" to="/projects">
-              See Projects
-            </Link>
-          </div>
-        </div>
+              <div className="flex flex-wrap gap-3 mt-5">
+                <Link className="btn" to="/about">
+                  About Me
+                </Link>
+                <Link className="btn btn-secondary" to="/projects">
+                  See Projects
+                </Link>
+              </div>
+            </div>
 
-        {/* aria-hidden="true" tells screen readers to skip decorative content.
+            {/* aria-hidden="true" tells screen readers to skip decorative content.
             The radial-gradient background isn't expressible as a single
             utility, so we use an arbitrary `bg-[...]` value. */}
-        <div
-          aria-hidden="true"
-          className="flex items-center justify-center p-8 rounded-lg bg-[radial-gradient(circle_at_30%_30%,rgba(110,231,183,0.18),transparent_60%)]"
-        >
-          <Logo size={220} />
-        </div>
-      </div>
+            <div
+              aria-hidden="true"
+              className="flex items-center justify-center p-8 rounded-lg bg-[radial-gradient(circle_at_30%_30%,rgba(110,231,183,0.18),transparent_60%)]"
+            >
+              <Logo size={220} />
+            </div>
+          </div>
 
-      {/* Mission card — the "card" component class from index.css, plus an
+          {/* Mission card — the "card" component class from index.css, plus an
           accent-colored left border added via utilities. */}
-      <div className="card border-l-4 border-l-accent">
-        <h2>Mission Statement</h2>
-        <p>
-          To craft honest, useful software — clean code paired with clear thinking —
-          and to leave every project, teammate, and codebase a little better than I
-          found it.
-        </p>
-      </div>
+          <div className="card border-l-4 border-l-accent">
+            <h2>Mission Statement</h2>
+            <p>
+              To build software that's clear, reliable, and genuinely useful —
+              learning the fundamentals properly rather than rushing past them,
+              and writing code that the next person (including future me) can
+              actually understand.
+            </p>
+          </div>
         </>
       )}
     </section>

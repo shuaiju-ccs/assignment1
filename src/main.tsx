@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------------
 // main.tsx — the app's entry point.
-// Author: Bill Chen
+// Author: Shuai Ju
 //
 // The browser loads index.html, which contains <div id="root"></div> and a
 // <script src="/src/main.tsx"> tag. Vite compiles this TSX file into plain
@@ -40,7 +40,7 @@ ReactDOM.createRoot(rootElement).render(
   // certain lifecycles so bugs like impure renders or stale effects show up
   // early. It has no effect on the production build.
   <React.StrictMode>
-    <BrowserRouter basename={routerBasename}>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <App />
     </BrowserRouter>
   </React.StrictMode>

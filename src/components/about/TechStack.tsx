@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------------
 // TechStack.tsx — a grouped list of technologies I use day-to-day.
-// Author: Bill Chen
+// Author: Shuai Ju
 // -----------------------------------------------------------------------------
 
 export type TechGroup = {

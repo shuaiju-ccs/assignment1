@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------------
 // ProjectDetails.tsx — the /projects/:id detail page.
-// Author: Bill Chen
+// Author: Shuai Ju
 //
 // Structurally this file mirrors BlogPost.tsx: read a param off the URL,
 // look it up in a shared data module, and render a "not found" state if the

@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------------
 // ResumeDownloadButton.tsx — link/button for downloading the résumé PDF.
-// Author: Bill Chen
+// Author: Shuai Ju
 //
 // Lives at the top level of /components (not under /about) because this is a
 // shared UI element — the About page uses it today, but any page (Home,

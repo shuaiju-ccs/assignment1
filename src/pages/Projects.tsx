@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------------
 // Projects.tsx — the /projects page.
-// Author: Bill Chen
+// Author: Shuai Ju
 //
 // Concepts introduced here:
 //   • Data-driven rendering: keep the list of projects as a plain TS array of

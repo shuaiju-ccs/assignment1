@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------------
 // App.tsx — the top-level "shell" component.
-// Author: Bill Chen
+// Author: Shuai Ju
 //
 // This is the single React component that main.tsx renders. It defines the
 // layout that surrounds every page (Navbar on top, Footer on the bottom) and
@@ -25,11 +25,7 @@ import Projects from './pages/Projects';
 import ProjectDetails from './pages/ProjectDetails';
 import Education from './pages/Education';
 import Services from './pages/Services';
-import Skills from './pages/Skills';
-import Contact from './pages/Contact';
-import Architecture from './pages/Architecture';
-import Blog from './pages/Blog';
-import BlogPost from './pages/BlogPost';
+import Contact from "./pages/Contact";
 import NotFound from './pages/NotFound';
 
 // A React "function component" is any function whose name starts with a
@@ -59,15 +55,10 @@ export default function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/education" element={<Education />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/architecture" element={<Architecture />} />
-          <Route path="/blog" element={<Blog />} />
           {/* Project details */}
           <Route path="/projects/:id" element={<ProjectDetails />} />
 
-          {/* Blog articles */}
-          <Route path="/blog/:slug" element={<BlogPost />} />
 
             {/* The wildcard is the catch-all for unknown URLs. */}
             <Route path="*" element={<NotFound />} />

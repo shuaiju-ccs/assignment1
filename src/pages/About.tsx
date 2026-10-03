@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------------
 // About.tsx — the /about page.
-// Author: Bill Chen
+// Author: Shuai Ju
 //
 // This page composes three child components. Each child owns its own JSX
 // (with utility classes inline). No page-level CSS file — spacing between

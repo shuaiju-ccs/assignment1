@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------------
 // Services.tsx — the /services page.
-// Author: Bill Chen
+// Author: Shuai Ju
 //
 // Structurally almost identical to Projects.tsx: a constant array of objects
 // mapped to card elements. The takeaway is that this list-of-cards pattern

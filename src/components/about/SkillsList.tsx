@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------------
 // SkillsList.tsx — a reusable "titled bullet list" for the About page.
-// Author: Bill Chen
+// Author: Shuai Ju
 // -----------------------------------------------------------------------------
 import { useState } from 'react';
 import './SkillsList.css';

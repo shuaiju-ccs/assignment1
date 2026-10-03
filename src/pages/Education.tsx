@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------------
 // Education.tsx — the /education page.
-// Author: Bill Chen
+// Author: Shuai Ju
 //
 // Concepts introduced here:
 //   • Deriving a value inside `.map()` before returning JSX. When the callback
@@ -14,7 +14,7 @@
 
 type Qualification = {
   id: string;
-  degree: string;
+  diploma: string;
   institution: string;
   startYear: number;
   endYear: number;
@@ -23,29 +23,23 @@ type Qualification = {
 
 const QUALIFICATIONS: Qualification[] = [
   {
-    id: 'msc',
-    degree: 'M.Sc., Computer Science',
-    institution: 'University of Toronto',
-    startYear: 2021,
-    endYear: 2023,
-    detail: 'Specialization in human–computer interaction. GPA 3.9/4.0.'
+    id: 'SET',
+    diploma: 'Software Engineering Technology',
+    institution: 'Centennial College',
+    startYear: 2025,
+    endYear: 2027,
+    detail: 'Currently in Semester 3 of the Software Engineering Technology program at Centennial College, with a focus on software development and engineering principles.'
   },
   {
-    id: 'bsc',
-    degree: 'B.Sc. (Hons.), Software Engineering',
-    institution: 'University of Waterloo',
-    startYear: 2016,
-    endYear: 2020,
-    detail: 'Dean\'s honour list. Capstone: real-time collaborative code editor.'
+    id: 'IS',
+    diploma: 'Information Systems',
+    institution: 'Centennial College',
+    startYear: 2002,
+    endYear: 2005,
+    detail: 'Diploma in Information Systems Management from Centennial College, with a focus on the business side.'
   },
-  {
-    id: 'aws-cert',
-    degree: 'AWS Certified Developer — Associate',
-    institution: 'Amazon Web Services',
-    startYear: 2024,
-    endYear: 2024,
-    detail: 'Credential ID AWS-DVA-1234-5678.'
-  }
+  
+
 ];
 
 export default function Education() {
@@ -74,7 +68,7 @@ export default function Education() {
             >
               <div className="font-bold text-accent text-[1.05rem]">{yearLabel}</div>
               <div>
-                <h3 className="mb-1">{item.degree}</h3>
+                <h3 className="mb-1">{item.diploma}</h3>
                 <p className="text-text mb-1">{item.institution}</p>
                 <p className="mb-0">{item.detail}</p>
               </div>
