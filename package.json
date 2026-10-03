@@ -1,9 +1,9 @@
 {
-  "name": "react-portfolio-site",
+  "name": "assignment1",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Personal portfolio site built with React + Vite + TypeScript.",
+  "description": "COMP229(404) Assignment1 — personal portfolio by Shuai Ju.",
   "engines": {
     "node": "^24.0.0"
   },
